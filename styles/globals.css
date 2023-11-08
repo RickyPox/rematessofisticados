@@ -1,27 +1,80 @@
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+body{
+  background-color: #060606;
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+h1{
+  font-size:100px;
+  font-weight:700;
+}
+
+h2{
+  font-size: 50px;
+  font-weight:600;
+}
+h3{
+  font-size:30px;
+  font-weight:600;
+}
+p{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.circle{
+  animation: colorChange 20s infinite linear;
+}
+
+@keyframes colorChange {
+  0%{
+    background-color: #F9B852;
+    opacity: 0.5;
+  }
+  16.666%{
+    background-color: #F67867;
+    opacity: 0.3;
+  }
+  33.32%{
+    background-color: #C45087;
+    opacity: 0.5;
+  }
+  49.98%{
+    background-color: #935EAB;
+    opacity: 0.3;
+  }
+  66.64%{
+    background-color: #2D9CCA;
+    opacity: 0.5;
+  }
+  83.3%{
+    background-color: #567AC2;
+    opacity: 0.3;
+  }
+  100%{
+    background-color: #F9B852;
+    opacity: 0.5;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+.marquee-container h2::before{
+  content: " ";
+  display: inline-flex;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #F9B852;
+  margin-right: 20px;
+}
+
+.marquee-container{
+  padding-right: 20px;
 }
