@@ -35,6 +35,8 @@ p{
   animation: colorChange 20s infinite linear;
   width: 50vw;
   height: 50vw;
+  max-height: 600px;
+  max-width: 600px;
 }
 
 @keyframes colorChange {
@@ -95,4 +97,22 @@ p{
     transform: rotate(360deg);
   }
   
+}
+
+.productStrokeText{
+  position: absolute!important;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  color:transparent;
+  font-size: 50px;
+  text-transform: uppercase;
+  display: none!important;
+}
+
+.productHoverTrigger:hover  .productStrokeText{
+  display: flex!important;
+}
+
+.productHoverTrigger:hover .productText{
+  opacity: 0;
 }

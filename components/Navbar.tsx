@@ -38,8 +38,8 @@ const handleMenuToggle = () => {
             </div>
 
             {/* Mobile */}
-            <div className="bg-black fixed top-0 left-0 z-[100]">
-                <button onClick={handleMenuToggle} className="text-white">
+            <div className="bg-black fixed top-0 left-0 z-[100] block md:hidden">
+                <button onClick={handleMenuToggle} className="text-white fixed">
                         <img src="/Menu.svg" 
                         className="w-[50px] h-[50px] m-[10px]"  alt="menu"/>
                     </button>

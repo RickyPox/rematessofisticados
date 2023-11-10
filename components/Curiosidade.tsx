@@ -1,6 +1,6 @@
 export default function Curiosidade (){
     return (
-        <div className="flex flex-col md:flex-row bg-[#D9D9D9] rounded-[30px] p-[5%] mx-[10%] space-y-[50px] md:space-y-[0px]">
+        <div className="flex flex-col md:flex-row bg-[#D9D9D9] rounded-[30px] p-[5%] mx-[10%] max-w-[800px] space-y-[50px] md:space-y-[0px]">
             <div className="flex flex-col md:w-1/2 items-center space-y-[50px]">
                 <div className="w-full flex justify-between">
                     <div>

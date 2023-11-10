@@ -30,7 +30,9 @@ export default function Home() {
       </Marquee> 
       <ServicosComponent></ServicosComponent>
       <ProdutosComponent></ProdutosComponent>
-      <Curiosidade></Curiosidade>
+      <div className="flex justify-center">
+        <Curiosidade></Curiosidade>
+      </div>
       <Trabalhos></Trabalhos>
       <Footer></Footer>
     </div>
