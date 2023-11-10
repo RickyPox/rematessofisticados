@@ -60,7 +60,7 @@ return (
             </div>
         </div>
       </Marquee>
-    <div className="mx-[300px] mt-[100px]">
+    <div className="mx-[10%] mt-[100px]">
         {produtos.map((produto, index) => (
         <div key={index} className="h-screen">
             <h3 className="text-white mb-[50px]">{produto.nome}</h3>

@@ -8,15 +8,15 @@ export default function Trabalhos (){
                     </h2>
                 </button>
             </div>
-            <div className="flex space-x-[50px] justify-center">
-                <div className="flex flex-col space-y-[50px]">
+            <div className="flex space-x-[5%] justify-center">
+                <div className="flex flex-col space-y-[5%]">
                     <img src="/Placeholder.png"></img>
                     <img src="/Placeholder.png"></img>
                 </div>
                 <div className="flex flex-col justify-end">
                     <img src="/PlaceholderVertical.png"></img>
                 </div>
-                <div className="flex flex-col space-y-[50px]">
+                <div className="flex flex-col space-y-[5%]">
                     <img src="/Placeholder.png"></img>
                     <img src="/Placeholder.png"></img>
                 </div>

@@ -15,7 +15,7 @@ return (
         </div>
         </Marquee>
     </div>
-    <div className="flex flex-col mx-[300px] mt-[100px] space-y-[10px]">
+    <div className="flex flex-col mx-[10%] mt-[100px] space-y-[10px]">
         <div className="flex space-x-[10px]">
             <div className="w-full h-full">
                 <img className="w-full h-full" src="Placeholder.png"></img>

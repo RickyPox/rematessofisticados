@@ -9,13 +9,13 @@ import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
-    <div className="w-screen">
+    <div className="w-screen relative">
       <Navbar></Navbar>
       <div className="h-screen relative flex justify-center items-center bg-black">
-      <div className="circle w-[580px] h-[580px] rounded-full absolute blur-[50px]"/>
+      <div className="circle rounded-full absolute blur-[50px]"/>
         <div className="flex flex-col space-y-[20px] relative">
-          <h1 className="text-center text-white uppercase">LOREM IPSUM <br></br> DOLOR SIT AMET</h1>
-          <p className="text-white text-center">Empresa especializada em fardamento de trabalho, artigos de desporto e publicidades.</p>
+          <h1 className="text-center text-white uppercase ">LOREM IPSUM <br></br> DOLOR SIT AMET</h1>
+          <p className="text-white text-center px-[20px]">Empresa especializada em fardamento de trabalho, artigos de desporto e publicidades.</p>
         </div>
       </div>
       <Marquee
@@ -27,7 +27,7 @@ export default function Home() {
             <h2 className="uppercase text-white flex items-center">Arrojados</h2>
           </div>
         </div>
-      </Marquee>
+      </Marquee> 
       <ServicosComponent></ServicosComponent>
       <ProdutosComponent></ProdutosComponent>
       <Curiosidade></Curiosidade>
