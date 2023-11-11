@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/Contactos.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/Contactos.js", "components/CursorContext.tsx", "components/Produtos.tsx"],
   "exclude": ["node_modules"]
 }

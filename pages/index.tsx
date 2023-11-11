@@ -4,12 +4,17 @@ import Navbar from "@/components/Navbar";
 import ProdutosComponent from "@/components/Produtos";
 import ServicosComponent from "@/components/Servicos";
 import Trabalhos from "@/components/Trabalhos";
-
+import Cursor from "@/components/Cursor";
 import Marquee from "react-fast-marquee";
+import { useState } from "react";
 
 export default function Home() {
+
+  const [cursorVariant, setCursorVariant] = useState("default");
+
   return (
     <div className="w-screen relative">
+      {/* <Cursor></Cursor> */}
       <Navbar></Navbar>
       <div className="h-screen relative flex justify-center items-center bg-black">
       <div className="circle rounded-full absolute blur-[50px]"/>
@@ -29,11 +34,13 @@ export default function Home() {
         </div>
       </Marquee> 
       <ServicosComponent></ServicosComponent>
-      <ProdutosComponent></ProdutosComponent>
-      <div className="flex justify-center">
+      <ProdutosComponent  setCursorVariant={setCursorVariant}></ProdutosComponent>
+      <div className="flex justify-center mt-[50px]">
         <Curiosidade></Curiosidade>
       </div>
+      <div className="mt-[50px]">
       <Trabalhos></Trabalhos>
+      </div>
       <Footer></Footer>
     </div>
   )

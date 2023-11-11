@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar(){
     
@@ -23,12 +23,27 @@ export default function Navbar(){
 ]
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+const [navbar, setNavbar] = useState(false);
+
+const changeBackground = () => {
+  if(window.scrollY >= 80){
+    setNavbar(true)
+  } else {
+    setNavbar(false)
+  }
+}
+useEffect(() => {
+  changeBackground()   
+  window.addEventListener("scroll", changeBackground)
+})
+
+
 const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
 };
     return(
         <nav>
-            <div className="md:flex hidden justify-center items-center space-x-[100px] py-[50px] fixed z-40 w-screen">
+            <div className={"md:flex hidden justify-center items-center space-x-[100px] py-[50px] fixed z-40 w-screen transition-all duration-250 " + (navbar ? "bg-[#000000]" : "bg-transparent")}>
                 <img src="Logo.png"></img>
                 <div className="flex space-x-[50px]">
                 {navigation.map((nav) =>(

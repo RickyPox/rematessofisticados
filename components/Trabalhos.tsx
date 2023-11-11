@@ -10,15 +10,23 @@ export default function Trabalhos (){
             </div>
             <div className="flex space-x-[5%] justify-center">
                 <div className="flex flex-col space-y-[5%]">
-                    <img src="/Placeholder.png"></img>
-                    <img src="/Placeholder.png"></img>
+                    <div className="imgContainer">
+                        <img src="/Placeholder.png"></img>
+                    </div>
+                    <div className="imgContainer">
+                        <img src="/Placeholder.png"></img>
+                    </div>
                 </div>
-                <div className="flex flex-col justify-end">
+                <div className="flex flex-col justify-end imgContainer">
                     <img src="/PlaceholderVertical.png"></img>
                 </div>
                 <div className="flex flex-col space-y-[5%]">
+                <div className="imgContainer">
                     <img src="/Placeholder.png"></img>
+                </div>
+                <div>
                     <img src="/Placeholder.png"></img>
+                </div>
                 </div>
             </div>
         </div>
