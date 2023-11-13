@@ -44,7 +44,7 @@ const handleMenuToggle = () => {
     return(
         <nav>
             <div className={"md:flex hidden justify-center items-center space-x-[100px] py-[50px] fixed z-40 w-screen transition-all duration-250 " + (navbar ? "bg-[#000000]" : "bg-transparent")}>
-                <img src="Logo.png"></img>
+                <Link href="/"><img src="Logo.png"></img></Link>
                 <div className="flex space-x-[50px]">
                 {navigation.map((nav) =>(
                     <h3 className="text-white font-normal"><Link href={nav.href}>{nav.name}</Link></h3>
