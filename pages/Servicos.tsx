@@ -1,4 +1,6 @@
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
+import { useState } from "react";
 import Marquee from "react-fast-marquee";
 
 export default function Servicos() {
@@ -6,31 +8,34 @@ const servicos = [
 {
     nome: "Bordados",
     cor: "F9B852",
-    imgs: ["/Placeholder.png", "/PlaceholderVertical.png"],
-    texto:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    imgs: ["/Placeholder.png", "/Placeholder.png", "/Placeholder.png", "/PlaceholderVertical.png"],
+    texto:"Texto Bordados"
 },
 {
     nome: "Estampagem",
     cor: "F67867",
-    imgs: ["/Placeholder.png", "/PlaceholderVertical.png"],
+    imgs: ["/Placeholder.png", "/Placeholder.png", "/Placeholder.png", "/PlaceholderVertical.png"],
     texto:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "Texto Estampagem",
 },
 {
     nome: "Serigrafía",
     cor: "C45087",
-    imgs: ["/Placeholder.png", "/PlaceholderVertical.png"],
+    imgs: ["/Placeholder.png", "/Placeholder.png", "/Placeholder.png", "/PlaceholderVertical.png"],
     texto:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    "Texto Serigrafia",
 },
 ];
 
+const [servicoSelecionado, setServicoSelecionado] = useState(servicos[0]);
+
 return (
 <div>
-    <h1 className="text-white text-center mt-[50px] text-[30px] uppercase">
+    <Navbar></Navbar>
+    <h1 className="text-white text-center text-[30px] uppercase pt-[200px]">
     Serviços
     </h1>
+    <img className="w-screen h-[10px] mb-[10px] mt-[30px]" src="Divider.png"></img>
     <div className=" bg-white">
     <Marquee autoFill={true}>
         <div className="flex space-x-[20px] py-[10px] marquee-container">
@@ -48,12 +53,15 @@ return (
     </Marquee>
     </div>
     {/* Mobile */}
-    <div className=" flex flex-col space-y-[15px] px-[10px] mt-[50px] md:hidden">
+    <div className=" flex flex-col space-y-[15px] px-[10px] mt-[50px] md:hidden mb-[50px]">
     <div className="grid grid-cols-2 gap-[10px]">
         {servicos.map((servico, index) => (
-        <div key={index} className="items-center">
+        <div key={index} className="items-center "
+        >
             <div
-            className={`bg-[#${servico.cor}] flex w-full justify-center items-center py-[10px]`}
+            className={`flex w-full justify-center items-center py-[10px] cursor-pointer`}
+            style={{ backgroundColor: servico.cor === servicoSelecionado.cor ? `#${servico.cor}`:'transparent' }}
+            onClick={() => setServicoSelecionado(servico)}
             >
             <h2 className="text-white">{servico.nome}</h2>
             </div>
@@ -62,26 +70,30 @@ return (
     </div>
     <div className="flex flex-col space-y-[5px]">
         <div className="flex space-x-[5px]">
-        <img className="w-1/3" src={servicos[0].imgs[0]}></img>
-        <img className="w-2/3" src={servicos[0].imgs[0]}></img>
+        <img className="w-1/3" src={servicoSelecionado.imgs[0]}></img>
+        <img className="w-2/3" src={servicoSelecionado.imgs[1]}></img>
         </div>
         <div className="flex space-x-[5px]">
-        <img className="w-2/3" src={servicos[0].imgs[0]}></img>
-        <img className="w-1/3" src={servicos[0].imgs[0]}></img>
+        <img className="w-2/3" src={servicoSelecionado.imgs[2]}></img>
+        <img className="w-1/3" src={servicoSelecionado.imgs[3]}></img>
         </div>
-        <p className="text-white text-[16px]">{servicos[0].texto} </p>
+        <p className="text-white text-[16px]"> {servicoSelecionado.texto}</p>
     </div>
     </div>
         {/* Bigger Screens */}
-    <div className=" mt-[100px] md:grid grid-cols-3 gap-[10px] justify-center hidden px-[10%]">
+    <div className=" mt-[100px] md:grid grid-cols-3 gap-[10px] justify-center hidden px-[10%] mb-[50px]">
     <div className="flex flex-col space-y-[10px]">
+      
         {servicos.map((servico, index) => (
         <div key={index} className="flex space-x-[10px] items-center">
             <div
-            className={`w-[2px] h-[90%] bg-[#${servico.cor}] rounded-full`}
+            className={`w-[2px] h-[90%] rounded-full line`}
+            style={{ backgroundColor:`#${servico.cor}` }}
             />
             <div
-            className={`bg-[#${servico.cor}] flex justify-center items-center w-full py-[10%]`}
+            className={`flex justify-center items-center w-full py-[10%] cursor-pointer`}
+            style={{ backgroundColor: servico.cor === servicoSelecionado.cor ? `#${servico.cor}`:'transparent', border:`solid 2px #${servico.cor}` }}
+            onClick={() => setServicoSelecionado(servico)}
             >
             <h2 className="text-white px-[20px] ">{servico.nome}</h2>
             </div>
@@ -92,20 +104,21 @@ return (
         <div className="flex flex-col">
         <div className="flex space-x-[10px] ">
             <div className="flex flex-col space-y-[10px]">
-            <img className="h-1/2" src={servicos[0].imgs[0]}></img>
-            <img className="h-1/2" src={servicos[0].imgs[0]}></img>
+            <img className="h-1/2" src={servicoSelecionado.imgs[0]}></img>
+            <img className="h-1/2" src={servicoSelecionado.imgs[1]}></img>
             </div>
             <div className="h-full">
-                <img className="h-full" src={servicos[0].imgs[0]}></img>
+                <img className="h-full" src={servicoSelecionado.imgs[2]}></img>
             </div>
         </div>
-        <p className="text-white text-[16px] mt-[15px]">{servicos[0].texto} </p>
+        <p className="text-white text-[16px] mt-[15px]">{servicoSelecionado.texto} </p>
         </div>
         <div className="h-full">
-            <img className="h-full" src={servicos[0].imgs[0]}></img>
+            <img className="h-full" src={servicoSelecionado.imgs[3]}></img>
         </div>
 
     </div>
+    <Footer></Footer>
 </div>
 );
 }
