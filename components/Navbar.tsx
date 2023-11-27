@@ -23,31 +23,17 @@ export default function Navbar(){
 ]
 const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-const [navbar, setNavbar] = useState(false);
-
-const changeBackground = () => {
-  if(window.scrollY >= 80){
-    setNavbar(true)
-  } else {
-    setNavbar(false)
-  }
-}
-useEffect(() => {
-  changeBackground()   
-  window.addEventListener("scroll", changeBackground)
-})
-
 
 const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
 };
     return(
         <nav>
-            <div className={"md:flex hidden justify-center items-center space-x-[100px] py-[50px] fixed z-40 w-screen transition-all duration-250 " + (navbar ? "bg-[#000000]" : "bg-transparent")}>
+            <div className="md:flex hidden justify-center items-center space-x-[100px] py-[50px] z-40 w-screen transition-all duration-250">
                 <Link href="/"><img src="Logo.png"></img></Link>
                 <div className="flex space-x-[50px]">
                 {navigation.map((nav) =>(
-                    <h3 className="text-white font-normal"><Link href={nav.href}>{nav.name}</Link></h3>
+                    <h3 className="text-white font-normal text-[18px]"><Link href={nav.href}>{nav.name}</Link></h3>
                 ))}
                 </div>
             </div>
@@ -63,7 +49,7 @@ const handleMenuToggle = () => {
                         <div className="flex flex-col items-center justify-center space-y-[50px] px-[10px] mt-[50px]">
                         <Link href="/"><img src="Logo.png"></img></Link>
                         {navigation.map((nav) =>(
-                        <h3 className="text-white font-normal"><Link href={nav.href}>{nav.name}</Link></h3>
+                        <h3 className="text-white font-normal text-[18px]"><Link href={nav.href}>{nav.name}</Link></h3>
                         ))}
                         </div>
                     </div>

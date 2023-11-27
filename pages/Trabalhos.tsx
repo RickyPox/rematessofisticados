@@ -1,3 +1,4 @@
+import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Marquee from "react-fast-marquee";
@@ -6,9 +7,9 @@ export default function Trabalhos() {
 return (
 <div>
     <Navbar></Navbar>
-    <h1 className="text-white text-center pt-[200px]">Trabalhos</h1>
-    <img className="w-screen h-[10px] mb-[10px] mt-[30px]" src="Divider.png"></img>
-    <div className=" bg-white">
+    <h1 className="text-white text-center ">Trabalhos</h1>
+<Divider></Divider>
+    <div>
         <Marquee autoFill={true}>
         <div className="flex space-x-[20px] py-[10px] marquee-container">
             <img src="Placeholder.png" className="w-[100px] h-[100px]"></img>

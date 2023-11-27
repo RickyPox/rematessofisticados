@@ -3,7 +3,7 @@ export default function Trabalhos (){
         <div>
             <div className="flex justify-center">
                 <button>
-                    <h2 className="uppercase text-white p-[10px] border border-white rounded-[15px]">
+                    <h2 className="uppercase text-white p-[10px] border border-white rounded-[15px] mb-[150px]">
                         Ver trabalhos
                     </h2>
                 </button>

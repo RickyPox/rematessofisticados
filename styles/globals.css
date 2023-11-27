@@ -80,6 +80,32 @@ p{
   }
 }
 
+
+@media screen and (min-width: 1920px) {
+  h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 100px;
+  }
+  
+  h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 50px;
+  }
+  
+  h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight:600;
+    font-size: 30px;
+  }
+  
+  p{
+    font-size: 18px;
+    font-weight: 400;
+  }
+}
+
 .circle{
   animation: colorChange 20s infinite linear;
   width: 50vw;
@@ -166,7 +192,6 @@ p{
   opacity: 0;
 }
 
-
 .imgContainer{
   overflow: hidden;
 }
@@ -178,4 +203,9 @@ p{
 
 .imgContainer:hover img {
   transform: scale(1.2); /* Ajuste o valor conforme necessário */
+}
+
+
+.divider{
+  background: linear-gradient(90deg, rgba(249,184,82,1) 0%, rgba(246,120,103,1) 20%, rgba(195,80,135,1) 40%, rgba(147,94,171,1) 60%, rgba(45,156,202,1) 80%, rgba(249,184,82,1) 100%);
 }

@@ -1,10 +1,9 @@
 import Marquee from "react-fast-marquee"
-import Cursor from "./Cursor"
 
-export default function ProdutosComponent ( { setCursorVariant }:any ) {
+export default function ProdutosComponent (  ) {
     return(
-        <div>
-            <div className="w-screen bg-[#F9B852] py-[5%] relative flex items-center justify-center productHoverTrigger" onMouseEnter={() => {setCursorVariant("imgCursor")}}>
+        <div className="">
+            <div className="w-screen bg-[#F9B852] py-[5%] relative flex items-center justify-center productHoverTrigger">
                 <Marquee
                 className="productStrokeText"
                  autoFill = {true}
