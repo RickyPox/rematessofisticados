@@ -1,10 +1,13 @@
 import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
-import React from "react";
+import React, { useState } from "react";
 import Marquee from "react-fast-marquee";
 
 export default function Produtos() {
+
+    const [hoveredCatalog, setHoveredCatalog] = useState<number | null>(null);
+
 const produtos = [
     {
     nome: "Escrita",
@@ -58,32 +61,44 @@ return (
         autoFill = {true}>
         <div className="py-[10px] ">
             <div className="flex space-x-[20px] py-[10px] border-t-[1px] border-white border-b-[1px] marquee-container">
-                <h2 className="uppercase text-white flex items-center">Brindes publicitários</h2>
-                <h2 className="uppercase text-white flex items-center">Desporto</h2>
-                <h2 className="uppercase text-white flex items-center">Têxtil</h2>
-                <h2 className="uppercase text-white flex items-center">Artigos Epi - proteção Individual</h2>
+                <p className="uppercase text-white flex items-center">Brindes publicitários</p>
+                <p className="uppercase text-white flex items-center">Desporto</p>
+                <p className="uppercase text-white flex items-center">Têxtil</p>
+                <p className="uppercase text-white flex items-center">Artigos Epi - proteção Individual</p>
             </div>
         </div>
       </Marquee>
-    <div className="mx-[10%] mt-[100px]">
+      <div className="mx-[10%] mt-[100px]">
         {produtos.map((produto, index) => (
-        <div key={index} className="h-screen">
+          <div key={index} className="min-h-screen">
             <h3 className="text-white mb-[50px]">{produto.nome}</h3>
             <div className="grid grid-cols-3 gap-[20px]">
-            {produto.catalogos.map((catalogo, catIndex) => (
-                <div key={catIndex} >
-                <img
+              {produto.catalogos.map((catalogo, catIndex) => (
+                <div
+                  key={catIndex}
+                  className="relative overflow-hidden"
+                  onMouseEnter={() => setHoveredCatalog(catIndex)}
+                  onMouseLeave={() => setHoveredCatalog(null)}
+                >
+                  <img
                     src={catalogo.img}
                     alt={catalogo.nome}
-                    className="w-full h-auto mr-[20px]"
-                />
-                <h3 className="text-white">{catalogo.nome}</h3>
+                    className="w-full h-auto mr-[20px] transition-all duration-500"
+                    style={{
+                      filter: hoveredCatalog === catIndex ? "blur(15px)" : "none",
+                    }}
+                  />
+                  {hoveredCatalog === catIndex && (
+                    <div className="bg-[#c4508650] absolute top-0 w-full h-full flex items-end">
+                      <p className="text-white px-2">{catalogo.nome}</p>
+                    </div>
+                  )}
                 </div>
-            ))}
+              ))}
             </div>
-        </div>
+          </div>
         ))}
-    </div>
+      </div>
     <Footer></Footer>
     </div>
 );

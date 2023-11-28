@@ -146,8 +146,8 @@ p{
 }
 
 
-.marquee-container h2::before{
-  content: " ";
+.marquee-container p::before{
+  content: "";
   display: inline-flex;
   width: 10px;
   height: 10px;
