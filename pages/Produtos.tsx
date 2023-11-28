@@ -1,3 +1,4 @@
+import Divider from "@/components/Divider";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import React from "react";
@@ -51,8 +52,8 @@ const produtos = [
 return (
     <div className="flex flex-col">
         <Navbar></Navbar>
-        <h1 className="text-white text-center pt-[200px]">Produtos</h1>
-        <img className="w-screen h-[10px] mb-[10px] mt-[30px]" src="Divider.png"></img>
+        <h1 className="text-white text-center">Produtos</h1>
+        <Divider></Divider>
         <Marquee
         autoFill = {true}>
         <div className="py-[10px] ">
